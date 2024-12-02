@@ -101,6 +101,7 @@ async function startHost() {
     };
 
     const offer = await localConnection.createOffer();
+    console.log('Offer created:', offer);
     await localConnection.setLocalDescription(offer);
     offerTextarea.value = safeEncode(offer);
 }
