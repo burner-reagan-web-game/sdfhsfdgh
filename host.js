@@ -60,10 +60,9 @@ function safeEncode(json) {
 }
 
 async function startHost() {
-    const hostName = sanitizeHTML(hostNameInput.value.trim());
+    let hostName = sanitizeHTML(hostNameInput.value.trim());
     if (!hostName) {
-        hostName = "Host"
-        return;
+        hostName = "Host";
     }
 
     const config = {
@@ -87,6 +86,7 @@ async function startHost() {
         } else {
             chat.innerHTML += `<p>${peerName}: ${sanitizedData}</p>`;
             chat.scrollTop = chat.scrollHeight;
+
         }
     };
 
@@ -95,7 +95,7 @@ async function startHost() {
     };
 
     localConnection.onicecandidate = ({ candidate }) => {
-        if (candidate) {
+        if (!candidate) {
             offerTextarea.value = safeEncode(localConnection.localDescription);
         }
     };
