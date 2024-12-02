@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebRTC Chat - Host</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <label class="theme-switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider"></span> Dark Mode
+    </label>
+    
+    <h1>WebRTC Chat - Host</h1>
+    <p>Step 1: Generate the "offer" and share it with the peer</p>
+    <p>Step 2: Wait for the peer to paste the "answer" and click "Accept Answer"</p>
+    <p>Step 3: Once the connection is made, you will be able to send and receive messages</p>
+    <input type="text" id="hostName" placeholder="Enter your name" />
+    <p>Enter offer and answer</p>
+    <textarea id="offer" placeholder="Offer will appear here" rows="10" cols="50"></textarea>
+    <textarea id="answer" placeholder="Paste answer here" rows="10" cols="50"></textarea>
+    <input type="text" id="message" placeholder="Enter message">
+    <button id="sendMessageBtn">Send Message</button>
+    <button id="startHostBtn">Generate Offer</button>
+    <button id="acceptAnswerBtn">Accept Answer</button>
+    <div id="chat"></div>
+    <p id="connectionStatus">Waiting for connection...</p>
+
+    <script src="host.js"></script>
+</body>
+
+</html>
